@@ -71,6 +71,30 @@ body {
   box-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
+.gallery-link{
+  color: black;
+  border-radius: 16px;
+  padding: none;
+  margin: none;
+}
+
+.gallery-link * .column{
+  background-color: rgba(60,60,60,0);
+  transition: background-color 800ms ease;
+  padding: 0;
+  margin-bottom: 16px;
+  height: var(--containerVert);
+}
+
+.gallery-link:hover{
+  color: black;
+}
+
+.gallery-link:hover * .column{
+  background-color: rgb(228, 212, 148);
+  height: var(--containerVert);
+}
+
 .hiding-image{
   width: 100%;
   height: var(--containerVert);
@@ -1074,14 +1098,14 @@ p a{
 .lake-background{
   background-image: url("/media/zoom_anim/01.jpg");
   background-size: cover;
-  animation-duration: 1s;
+  animation-duration: 1.4s;
   animation-name: poolAnimRev;
   animation-direction: alternate;
 }
 .lake-background:hover{
   background-image: url("/media/zoom_anim/11.jpg");
   background-size: cover;
-  animation-duration: 1s;
+  animation-duration: 1.4s;
   animation-name: poolAnim;
   animation-direction: alternate;
 }
