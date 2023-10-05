@@ -1308,6 +1308,7 @@ p a{
     }
     
     #calendar body {
+    position:fixed;
      overflow: hidden;
      font-family: "Ensign:Sans", Arial, "noto sans" , sans-serif;
      font-weight: 100;
