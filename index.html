@@ -28,8 +28,39 @@
         </header>
         <script id="nav_replace" src="nav.js"></script>
         
-        <div itemscope itemtype="https://schema.org/VideoObject" class="video-wrapper">
+        <div class="video-wrapper">
 
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "LocalBusiness",
+                  "openingHours": "8:00 AM",
+                  "address": "1720 E Houston Ave, Spokane, Washington 99217",
+                  "brand": "Dynamic Decks Inc.",
+                  "email": "decksinbox@gmail.com",
+                  "founder": "Matt Schupp",
+                  "location":"1720 E Houston Ave, Spokane, Washington 99217",
+                  "foundingDate":"1999",
+                  "slogan":"Quality Decks, Built Right",
+                  "name":"Dynamic Decks Inc",
+                  "telephone":"5094643255",
+                  "priceRange": "$$$",
+                  "image":"dynamicdecksinc.com/media/logo.png"
+                }
+            </script>
+
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "VideoObject",
+                  "videoFrameSize": "1080x720",
+                  "name": "Dynamic Decks Demo Video",
+                  "uploadDate": "10/5/2023",
+                  "thumbnailUrl": "/media/deck-demo-thumb.jpg",
+                  "description": "Beautiful decks created by the hard work of Dynamic Decks.",
+                  "contentUrl":"/media/deck-demo.mp4"
+                }
+            </script>
             
             <video playsinline autoplay muted loop>
                 <source src="/media/deck-demo.mp4" type="video/mp4">
@@ -80,8 +111,12 @@
                                     </div>
                                 </div>
                             </div>
+
+                            
+                            </script>
+
                             <div class="column">
-                                <img src="media/cover-sky.jpg" class="hiding-image">
+                                <img src="media/cover-sky.jpg" class="hiding-image" alt="Beautiful sky and a gorgeous deck with a stylish cover over it.">
                             </div>
                         </div>
                     </a>
@@ -183,6 +218,33 @@
             <div class="row">
                 <div class="columnSmall">
                     <div class="customerQuotes reveal-left reveal">
+
+                        <script type="application/ld+json">
+                            {
+                              "@context": "https://schema.org",
+                              "@type": "Review",
+                              "itemReviewed": {
+                                "@type": "Restaurant",
+                                "image": "https://www.example.com/seafood-restaurant.jpg",
+                                "name": "Legal Seafood",
+                                "servesCuisine": "Seafood",
+                                "priceRange": "$$$",
+                                "telephone": "1234567",
+                                "address" :{
+                                  "@type": "PostalAddress",
+                                  "streetAddress": "123 William St",
+                                  "addressLocality": "New York",
+                                  "addressRegion": "NY",
+                                  "postalCode": "10038",
+                                  "addressCountry": "US"
+                                }
+                              },
+                              "reviewRating": {"@type": "Rating","ratingValue": "5"},
+                              "author": "Pat Mcpartland",
+                              "itemReviewed": "Service"
+                            }
+                        </script>
+
                         <i>"A wonderful, 3 person crew, removed the old deck and installed our new one. They were very professional and focused on their task as a real team. Clean up was amazingly as well. The deck is beautiful and we couldn’t be happier. I would highly recommend Dynamic Decks."</i>
                         <br><br>
                         - <b>Pat Mcpartland</b>
