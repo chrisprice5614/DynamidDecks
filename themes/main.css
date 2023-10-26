@@ -1,6 +1,6 @@
 :root {
   --link: #FFF;
-  --linkHover: #fff200;
+  --linkHover: rgb(255, 242, 0);
   --background: #d8c697;
   --blue: #7fb0a4;
   --containerVert: 500px;
@@ -9,23 +9,49 @@
 
 
 body {
-  position: absolute;
-    min-width: 100%;
-    width: 100%;
+
     overflow-x: hidden;
     font-family: "Open Sans";
     font-weight: 400;
     padding: 0px;
     margin: 0px;
     line-height: 1.5em;
-    background-color: black;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: radial-gradient(ellipse at bottom, #210630f7 0, #210630f7, black 100%);
+    background-image: url("/media/wood-light.png");
+    background-repeat: repeat;
     color: white;
 }
+
+.contact-form{
+  background-color: #F1F1F1;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  color: black;
+  
+}
+
+input[type=text], input[type='phone number'], input[type='email'], textarea {
+  box-shadow: inset 0 1px 3px #ddd;
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: box-shadow 220ms ease;
+}
+
+input[type=text]:hover, input[type='phone number']:hover, input[type='email']:hover, textarea:hover {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .1);
+}
+
+input[type=text]:focus, input[type='phone number']:focus, input[type='email']:focus, textarea:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
 
 .logoClass{
   padding-left: 0;
@@ -51,7 +77,10 @@ body {
 .quoteButton{
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 1.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   background-color: var(--linkHover);
   transition: box-shadow 220ms ease-out;
   border: none;
@@ -59,8 +88,75 @@ body {
   box-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
+
+.galleryButton{
+  
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  background-color: var(--linkHover);
+  transition: box-shadow 220ms ease-out;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+.b-lazy {
+  opacity:0;
+  transform: scale(3);
+  transition: all 500ms;
+}
+.b-loaded {
+  opacity:1;
+  transform: scale(1);
+}
+
+.mattPhoto{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow:  0px 0px 12px rgba(0,0,0,0.8);
+}
+
+.galleryButton:hover{
+  box-shadow:  0px 0px 4px rgba(0,0,0,0.8);
+  cursor:pointer;
+}
+
+.galleryButton.active{
+  background-color: rgb(77, 204, 41);
+}
+
+ul{
+  display: block;
+  text-align: left;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  padding:0;
+}
+
+li{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  
+}
+
+
 .quoteButton:hover{
-  box-shadow:  0px 0px 0px rgba(0,0,0,0.8);
+  box-shadow:  0px 0px 4px rgba(0,0,0,0.8);
   cursor:pointer;
 }
 
@@ -82,8 +178,6 @@ body {
 }
 
 .gallery-link * .column{
-  background-color: rgba(60,60,60,0);
-  transition: background-color 800ms ease;
   padding: 0;
   margin-bottom: 16px;
   height: var(--containerVert);
@@ -94,12 +188,12 @@ body {
 }
 
 .gallery-link:hover * .column{
-  background-color: rgb(228, 212, 148);
   height: var(--containerVert);
 }
 
 .hiding-image{
   width: 100%;
+  object-fit: cover;
   height: var(--containerVert);
   transform: translate(-50%,0%);
   opacity: 1;
@@ -124,7 +218,7 @@ body {
   transform: translate(-50%,-50%);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .hiding-image{
     width: 100%;
     height: var(--containerVert);
@@ -141,6 +235,14 @@ body {
     line-height: normal;
     transform: translate(0%,0%);
     transition: transform 500ms ease;
+  }
+
+  .move-hiding.reveal * .hiding-image{
+    transform: translate(0%,0%);
+  }
+  
+  .move-hiding.reveal * .hiding-text{
+    transform: translate(-50%,-50%);
   }
 }
 
@@ -305,6 +407,7 @@ main h2{
   text-align: center;
   width: 100%;
   height: var(--containerVert);
+  overflow-y: hidden;
 }
 
 .container img{
@@ -350,6 +453,32 @@ main h2{
   width: 50%;
 }
 
+.columnMini {
+  float: left;
+  width: 15%;
+  margin-left: 1%;
+  margin-right: auto;
+  
+}
+
+@media screen and (max-width: 800px) {
+  .columnMini {
+    float: left;
+    width: 30%;
+  }
+}
+
+.master-button{
+  border-radius: 16px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 .quarter-column {
   float: left;
   width: 20%;
@@ -358,7 +487,7 @@ main h2{
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .quarter-column {
     float: left;
     width: 90%;
@@ -390,9 +519,10 @@ main h2{
 
 .row{
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .column {
     width: 100%;
   }
@@ -433,6 +563,13 @@ main h3 {
     margin-top: 0px;
     margin-bottom: 0px;
     
+}
+
+@media screen and (max-width: 800px) {
+  .title{
+    width: 100%;
+    font-size:42pt;
+  }
 }
 
 .title2 {
@@ -528,7 +665,7 @@ video {
   transform: translate(-50%, -220%);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .textInImg{
     width: 100%;
   font-size:42pt;
@@ -596,6 +733,7 @@ video {
 
 .light-background{
   background-image: url("/media/wood-light.png");
+  background-repeat: repeat;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
@@ -791,6 +929,22 @@ p a{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-section-2{
+  height: 400px;
+  background-color: green;
+  width: 100%;
+  background-image: url("/media/happy-work.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.team-photo{
+  background-image: url("/media/team-photo.jpg");
   background-size: cover;
 }
 
@@ -1107,112 +1261,7 @@ p a{
 .lake-background{
   background-image: url("/media/zoom_anim/01.jpg");
   background-size: cover;
-  animation-duration: 1.4s;
-  animation-name: poolAnimRev;
-  animation-direction: alternate;
 }
-.lake-background:hover{
-  background-image: url("/media/zoom_anim/11.jpg");
-  background-size: cover;
-  animation-duration: 1.4s;
-  animation-name: poolAnim;
-  animation-direction: alternate;
-}
-
-@keyframes poolAnimRev{
-  100%{
-    background-image: url("/media/zoom_anim/01.jpg");
-    background-size: cover;
-  }
-  90%{
-    background-image: url("/media/zoom_anim/02.jpg");
-    background-size: cover;
-  }
-  80%{
-    background-image: url("/media/zoom_anim/03.jpg");
-    background-size: cover;
-  }
-  70%{
-    background-image: url("/media/zoom_anim/04.jpg");
-    background-size: cover;
-  }
-  60%{
-    background-image: url("/media/zoom_anim/05.jpg");
-    background-size: cover;
-  }
-  50%{
-    background-image: url("/media/zoom_anim/06.jpg");
-    background-size: cover;
-  }
-  40%{
-    background-image: url("/media/zoom_anim/07.jpg");
-    background-size: cover;
-  }
-  30%{
-    background-image: url("/media/zoom_anim/08.jpg");
-    background-size: cover;
-  }
-  20%{
-    background-image: url("/media/zoom_anim/09.jpg");
-    background-size: cover;
-  }
-  10%{
-    background-image: url("/media/zoom_anim/10.jpg");
-    background-size: cover;
-  }
-  0%{
-    background-image: url("/media/zoom_anim/11.jpg");
-    background-size: cover;
-  }
-}
-
-@keyframes poolAnim{
-  0%{
-    background-image: url("/media/zoom_anim/01.jpg");
-    background-size: cover;
-  }
-  10%{
-    background-image: url("/media/zoom_anim/02.jpg");
-    background-size: cover;
-  }
-  20%{
-    background-image: url("/media/zoom_anim/03.jpg");
-    background-size: cover;
-  }
-  30%{
-    background-image: url("/media/zoom_anim/04.jpg");
-    background-size: cover;
-  }
-  40%{
-    background-image: url("/media/zoom_anim/05.jpg");
-    background-size: cover;
-  }
-  50%{
-    background-image: url("/media/zoom_anim/06.jpg");
-    background-size: cover;
-  }
-  60%{
-    background-image: url("/media/zoom_anim/07.jpg");
-    background-size: cover;
-  }
-  70%{
-    background-image: url("/media/zoom_anim/08.jpg");
-    background-size: cover;
-  }
-  80%{
-    background-image: url("/media/zoom_anim/09.jpg");
-    background-size: cover;
-  }
-  90%{
-    background-image: url("/media/zoom_anim/10.jpg");
-    background-size: cover;
-  }
-  100%{
-    background-image: url("/media/zoom_anim/11.jpg");
-    background-size: cover;
-  }
-}
-
 
 
 .spoiler * .spoiler-in {
@@ -1227,7 +1276,7 @@ p a{
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .spoiler.active * .spoiler-in {
     max-height: 90px; /*use a big value here*/
   }
@@ -1270,6 +1319,7 @@ p a{
   font-size: 64pt;
   font-weight: 600;
   line-height: auto;
+  height: 72px;
 }
 
 .number-wrapper{

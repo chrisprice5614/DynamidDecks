@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Decks | Gallery</title>
+        <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+        <meta charset='utf-8'>
+        <meta name="DC.title" content="Dynamic Decks" />
+        <meta name="geo.region" content="US-WA" />
+        <meta name="geo.placename" content="Spokane" />
+        <meta name="geo.position" content="47.71653;-117.383242" />
+        <meta name="ICBM" content="47.71653, -117.383242" />
+        <meta name = "keywords" content ="decks, washington decks, deck builder, deck builder spokane, spokane decks">
+        <meta name = "viewport" content = "width=device-width">
+        <meta name = "description" content = "Call 509-464-3325 to get an estimate on a deck construction project in Spokane, WA.">
+        <meta name = "author" content = "Dynamic Decks">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/uci5aaf.css">
+        <link rel="stylesheet" href="/themes/main.css" type="text/css">
+        
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </head>
+    <body>
+        <header>
+        </header>
+        <script id="nav_replace" src="nav.js"></script>
+        
+        <div class="video-wrapper">
+
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "LocalBusiness",
+                  "openingHours": "8:00 AM",
+                  "address": "1720 E Houston Ave, Spokane, Washington 99217",
+                  "brand": "Dynamic Decks Inc.",
+                  "email": "decksinbox@gmail.com",
+                  "founder": "Matt Schupp",
+                  "location":"1720 E Houston Ave, Spokane, Washington 99217",
+                  "foundingDate":"1999",
+                  "slogan":"Quality Decks, Built Right",
+                  "name":"Dynamic Decks Inc",
+                  "telephone":"5094643255",
+                  "priceRange": "$$$",
+                  "image":"dynamicdecksinc.com/media/logo.png"
+                }
+            </script>
+
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "VideoObject",
+                  "videoFrameSize": "1080x720",
+                  "name": "Dynamic Decks Demo Video",
+                  "uploadDate": "10/5/2023",
+                  "thumbnailUrl": "/media/deck-demo-thumb.jpg",
+                  "description": "Beautiful decks created by the hard work of Dynamic Decks.",
+                  "contentUrl":"/media/deck-demo.mp4"
+                }
+            </script>
+            
+            <video playsinline autoplay muted loop>
+                <source src="/media/deck-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="headerVid">
+                <h1 class="title"><b>Gallery</b></h1>
+            </div>
+        </div>
+
+        <main>
+            <div class="midSection">
+                <div class="thin-space">
+                    <div class="row" style="padding-bottom: 1em; padding-top: 1em;">
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="decks" onclick = "activate(this.getAttribute('btn'))"><b>Decks</b></button>
+                        </div>
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="privacyWall" onclick = "activate(this.getAttribute('btn'))"><b>Privacy Walls</b></button>
+                        </div>
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="lighting" onclick = "activate(this.getAttribute('btn'))"><b>Lighting</b></button>
+                        </div>
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="railings" onclick = "activate(this.getAttribute('btn'))"><b>Railings</b></button>
+                        </div>
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="covers" onclick = "activate(this.getAttribute('btn'))"><b>Covers</b></button>
+                        </div>
+                        <div class="columnMini">
+                            <button class="galleryButton master-button" btn="stairs" onclick = "activate(this.getAttribute('btn'))"><b>Stairs</b></button>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div id="Gallery">
+                    
+                </div>
+            </div>
+        </main>
+        <footer>
+            <script id="foot_replace" src="footer.js"></script>
+        </footer>
+    </body>
+
+    <script src="/BLazy.js"></script>
+    
+
+    <script >
+
+
+        
+            
+        let array = [];
+        let string = JSON.stringify(array);
+        localStorage.setItem("galleryArray", string);
+
+        function activate(btn){
+
+            let btns = document.getElementsByClassName("galleryButton"); //Grab all the buttons
+            for(var i = 0; i < btns.length; i++) //Loop through the buttons
+            {
+                let thisBtn = btns[i];
+                let checkBtn = thisBtn.getAttribute("btn");
+                if(btn == checkBtn)
+                {
+                    let string = localStorage.getItem("galleryArray");
+                    let array = JSON.parse(string);
+                    if(thisBtn.classList.contains("active"))
+                    {
+                        thisBtn.classList.remove("active");
+                        
+                        array = array.filter(e => e !== btn);
+                        string = JSON.stringify(array);
+                        localStorage.setItem("galleryArray", string);
+                    }
+                    else
+                    {
+                        thisBtn.classList.add("active");
+
+                        array.push(btn);
+                        string = JSON.stringify(array);
+                        localStorage.setItem("galleryArray", string);
+                    }
+                }
+                
+            }
+            buildGallery();
+        }
+
+        function removeAllChildNodes(parent) {
+            if(parent.childNodes.length > 0)
+            {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+        }
+
+        function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex > 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+        }
+
+        function buildGallery(){
+            (function() {
+            // Initialize
+            var bLazy = new Blazy();
+            })();
+            var items = [
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/01.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","railings"],
+                    link: "/media/gallery/02.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/03.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings","stairs"],
+                    link: "/media/gallery/04.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/05.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","covers","decks"],
+                    link: "/media/gallery/06.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","covers","decks"],
+                    link: "/media/gallery/07.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","covers","decks","stairs","privacyWall"],
+                    link: "/media/gallery/08.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/09.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","lighting"],
+                    link: "/media/gallery/10.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall","railings"],
+                    link: "/media/gallery/11.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","lighting"],
+                    link: "/media/gallery/12.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings","cover"],
+                    link: "/media/gallery/13.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","lighting","railings","cover"],
+                    link: "/media/gallery/14.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/15.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/16.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","privacyWall","lighting","railing"],
+                    link: "/media/gallery/17.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/18.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","privacyWall"],
+                    link: "/media/gallery/19.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/20.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/21.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/22.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/23.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/23.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/24.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/25.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs"],
+                    link: "/media/gallery/26.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/27.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","railings"],
+                    link: "/media/gallery/28.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/29.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/30.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/31.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/32.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings"],
+                    link: "/media/gallery/33.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings"],
+                    link: "/media/gallery/34.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings"],
+                    link: "/media/gallery/35.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings","covers"],
+                    link: "/media/gallery/36.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/37.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/38.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/39.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs"],
+                    link: "/media/gallery/40.jpg"
+                },
+                {
+                    catagoryMajor: ["railings"],
+                    link: "/media/gallery/41.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/42.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs","decks"],
+                    link: "/media/gallery/43.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs","decks"],
+                    link: "/media/gallery/44.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/45.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/46.jpg"
+                },
+                {
+                    catagoryMajor: ["railings"],
+                    link: "/media/gallery/47.jpg"
+                },
+                {
+                    catagoryMajor: ["railings"],
+                    link: "/media/gallery/48.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/49.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/50.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/51.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs","decks"],
+                    link: "/media/gallery/52.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/53.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/54.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/55.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/56.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/57.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","stairs","covers"],
+                    link: "/media/gallery/58.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","lighting"],
+                    link: "/media/gallery/59.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","lighting","stairs"],
+                    link: "/media/gallery/60.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/61.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","stairs"],
+                    link: "/media/gallery/62.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/63.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","decks"],
+                    link: "/media/gallery/64.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs","decks"],
+                    link: "/media/gallery/65.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs","decks"],
+                    link: "/media/gallery/66.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/67.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","stairs"],
+                    link: "/media/gallery/68.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","stairs"],
+                    link: "/media/gallery/69.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks"],
+                    link: "/media/gallery/70.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","stairs"],
+                    link: "/media/gallery/71.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/72.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings","lighting"],
+                    link: "/media/gallery/73.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings"],
+                    link: "/media/gallery/74.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/75.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/76.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs","railings"],
+                    link: "/media/gallery/77.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/78.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/79.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/80.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","railings"],
+                    link: "/media/gallery/81.jpg"
+                },
+                {
+                    catagoryMajor: ["stairs","railings"],
+                    link: "/media/gallery/82.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","privacyWall"],
+                    link: "/media/gallery/83.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","privacyWall","stairs","railings"],
+                    link: "/media/gallery/84.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/85.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/86.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","covers","railings","lighting"],
+                    link: "/media/gallery/87.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","covers","railings","lighting"],
+                    link: "/media/gallery/88.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","covers","lighting"],
+                    link: "/media/gallery/89.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","covers","lighting","stairs","railings"],
+                    link: "/media/gallery/90.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/91.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/92.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/93.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/94.jpg"
+                },
+                {
+                    catagoryMajor: ["lighting","decks","stairs"],
+                    link: "/media/gallery/95.jpg"
+                },
+                {
+                    catagoryMajor: ["railings","decks","stairs"],
+                    link: "/media/gallery/96.jpg"
+                },
+                {
+                    catagoryMajor: ["covers"],
+                    link: "/media/gallery/97.jpg"
+                },
+                {
+                    catagoryMajor: ["covers"],
+                    link: "/media/gallery/98.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","decks","railings"],
+                    link: "/media/gallery/99.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/100.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","covers","stairs","railings"],
+                    link: "/media/gallery/101.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs","railings"],
+                    link: "/media/gallery/102.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","decks","railings"],
+                    link: "/media/gallery/103.jpg"
+                },
+                {
+                    catagoryMajor: ["covers"],
+                    link: "/media/gallery/104.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall"],
+                    link: "/media/gallery/105.jpg"
+                },
+                {
+                    catagoryMajor: ["privacyWall","railings","stairs"],
+                    link: "/media/gallery/106.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/107.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","railings"],
+                    link: "/media/gallery/108.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/109.jpg"
+                },
+                {
+                    catagoryMajor: ["covers"],
+                    link: "/media/gallery/110.jpg"
+                },
+                {
+                    catagoryMajor: ["decks"],
+                    link: "/media/gallery/111.jpg"
+                },
+                {
+                    catagoryMajor: ["decks","stairs"],
+                    link: "/media/gallery/112.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","stairs","railings"],
+                    link: "/media/gallery/113.jpg"
+                },
+                {
+                    catagoryMajor: ["covers","stairs","railings","decks"],
+                    link: "/media/gallery/114.jpg"
+                },
+                
+            ];
+
+            shuffle(items);
+
+            let gallery = document.getElementById("Gallery");
+            removeAllChildNodes(gallery);
+
+            let string = localStorage.getItem("galleryArray");
+            let array = JSON.parse(string);
+            
+            var rowz = 0;
+            for(var i = 0; i < items.length; i++)
+            {
+                if(rowz % 3 == 0)
+                {
+                    let row = gallery.appendChild(document.createElement("div"));
+                    row.classList.add("row");
+
+                }
+
+                let row = gallery.lastChild;
+                item = items[i];
+                var good = false;
+                if(array.length == 0){
+                    good = true;
+                }
+
+
+                for(var j = 0; j < item.catagoryMajor.length; j++){
+                    if(array.includes(item.catagoryMajor[j])){
+                        good = true;
+                    }
+                }
+
+                if(good == true)
+                {
+                    rowz++;
+                    let elem = row.appendChild(document.createElement("div"));
+                    elem.classList.add("columnSmall");
+                    
+
+                    let lilElem = elem.appendChild(document.createElement("div"));
+                    lilElem.classList.add("container");
+
+                    let lilerElem = lilElem.appendChild(document.createElement("div"));
+                    lilerElem.classList.add("img-zoom");
+
+                    let img = lilerElem.appendChild(document.createElement("img"));
+                    img.setAttribute("data-src",item.link);
+                    img.classList.add("b-lazy");
+                }
+                
+            }
+        }
+
+        buildGallery();
+    </script>
+
+</html>
