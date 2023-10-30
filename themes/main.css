@@ -1277,7 +1277,7 @@ p a{
 
 
 @media screen and (max-width: 800px) {
-  .spoiler.active * .spoiler-in {
+  .spoiler * .spoiler-in {
     max-height: 90px; /*use a big value here*/
   }
 }
