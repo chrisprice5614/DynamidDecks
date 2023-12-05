@@ -50,7 +50,125 @@
         <script id="nav_replace" src="/nav.js"></script>
         
 
+        <script>
             
+            function shareFacebook() {
+                window.open('https://www.facebook.com/sharer/sharer.php?u='+window.location.href+'&amp;src=sdkpreparse','_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Facebook","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+            }
+
+            function shareTwitter() {
+                window.open('https://twitter.com/intent/tweet?text=Check%20out%20this%20article%20by%20Dynamic%20Decks!%20'+window.location.href,'_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Twitter","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+
+                
+            }
+
+            function sharePinterest() {
+                window.open('http://pinterest.com/pin/create/link/?url='+window.location.href+'&media=https://www.dynamicdecksinc.com/blog/01/titlecard.jpg&description=Check%20out%20this%20article%20by%20Dynamic%20Decks!','_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Pinterest","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+            }
+
+        </script>
 
         <main>
         <div class="midSection">
@@ -58,17 +176,17 @@
                         <h1 style="text-align: left;">Deck, Patio, Porch, Which is it?</h1>
                         <div style="font-size:16pt">We've all heard these terms, but what's the difference between them?</div>
                         <br>
-                        <div>By <b>Chris Price</b> • December 4 2023</div>
+                        <div>By <b>Chris Price</b> • December 5 2023</div>
                         <img src="/blog/01/hero.jpg" width="100%;" style="width:100%; object-position: middle middle;object-fit: cover;">
                         <span class="fb-share-button" data-href="https://www.dynamicdecksinc.com/blog/01/post.html" data-layout="" data-size="">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.dynamicdecksinc.com%2Fblog%2F01%2Fpost.html&amp;src=sdkpreparse" target="_blank" rel="noopener">
+                            <a href="javascript:shareFacebook()  " rel="noopener">
                                 <ion-icon name="logo-facebook" class="social-icon-link"></ion-icon>
                             </a>
                         </span>
-                        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20article%20by%20Dynamic%20Decks!%20https://www.dynamicdecksinc.com/blog/01/post.html" target="_blank">
+                        <a href="javascript:shareTwitter()">
                             <ion-icon name="logo-twitter" class="social-icon-link"></ion-icon>
                         </a>
-                        <a href="http://pinterest.com/pin/create/link/?url=https://www.dynamicdecksinc.com/blog/01/post.html&media=https://www.dynamicdecksinc.com/blog/01/titlecard.jpg&description=Check%20out%20this%20article%20by%20Dynamic%20Decks!" target="_blank">
+                        <a href="javascript:sharePinterest()">
                             <ion-icon name="logo-pinterest" class="social-icon-link"></ion-icon>
                         </a>
                         
