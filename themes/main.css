@@ -89,6 +89,66 @@ input[type=text]:focus, input[type='phone number']:focus, input[type='email']:fo
 }
 
 
+.post-title{
+  margin-top: 12px;
+  color: black;
+  font-family:"capitolina";
+  font-size:18pt;
+  text-align:left;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0);
+  
+  transition: text-decoration-color 220ms ease-out;
+}
+
+.post-holder{
+  text-decoration: none;
+  margin: 12px;
+  border-radius: 12px;
+  box-shadow:  4px 4px 8px rgba(0,0,0,0);
+  transition: box-shadow 220ms ease-out;
+}
+
+.post-holder:hover{
+  box-shadow:  4px 4px 8px rgba(0,0,0,0.8);
+}
+
+.post-title:hover{
+  text-decoration-color: rgba(0,0,0,1);
+
+}
+
+.post-image-container{
+  height:256px;
+  width:90%;
+  background-color: rgb(204, 195, 195);
+  margin: 12px;
+  border-radius: 12px;
+  box-shadow:  4px 4px 8px rgba(0,0,0,0.8);
+  
+}
+
+.post-image{
+  height:256px;
+  max-width: 90%;
+  display: block; 
+  margin: auto;
+  filter:none;
+  object-fit: cover;
+}
+
+.post-info{
+  color: black;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-size: 10pt;
+  text-decoration: none;
+  text-align: left;
+  padding: none;
+  margin: 0;
+}
+
+
 .galleryButton{
   
   display: block;
@@ -417,6 +477,21 @@ main h2{
   object-fit: cover;
 }
 
+.container-smaller {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 256px;
+  overflow-y: hidden;
+}
+
+.container-smaller img{
+  width: 100%;
+  height: 256px;
+  object-position: middle middle;
+  object-fit: cover;
+}
+
 .centered-element {
   position: absolute;
   top: 50%;
@@ -432,7 +507,7 @@ main h2{
 }
 
 .midSection{
-  background-color: #EEE;
+  background-color: #FFF;
   color: black;
 }
 
@@ -540,6 +615,26 @@ main h1 {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.article-paragraph{
+  font-family: "open sans";
+  text-align: left;
+  margin: none;
+  font-size: 18pt;
+  line-height: 2em;
+}
+
+@media screen and (max-width: 800px) {
+  .article-paragraph{
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 800px){
+  main h1{
+    font-size:24pt;
+  }
 }
 
 main h3 {
@@ -948,6 +1043,27 @@ p a{
   background-size: cover;
 }
 
+.blog-photo{
+  background-image: url("/media/blog.jpg");
+  background-size: cover;
+}
+
+.discount{
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 12px;
+}
+
+@media all and (max-width: 800px) {
+  .discount {
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 12px;
+  }
+}
+
 
 .circle-img img{
   width: 100%;
@@ -1168,6 +1284,41 @@ p a{
     cursor: pointer;
 }
 
+.social-icon-link{
+  font-size: 48px;
+  color: black;
+  transition: color 220ms ease-out;
+}
+
+.social-icon-link:hover{
+  color: var(--linkHover);
+}
+
+.instagram-button{
+  display: block;
+  font-family: "Open Sans";
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  padding: 12px;
+  background-color: white;
+  outline-color: black;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  transition-property: color, outline-color, background-color;
+  transition-duration: 220ms;
+  transition-timing-function: ease-out;
+}
+
+.instagram-button:hover{
+  color: white;
+  background-color: black;
+  outline-color: white;
+  cursor:pointer;
+}
+
 #notification{
     clear: both;
     color:#61a6ff;
@@ -1324,7 +1475,7 @@ p a{
 
 .number-wrapper{
   text-align: center;
-  background-color: #DDD;
+  background-color: #FFF;
   padding-top: 72px;
   padding-bottom: 72px;
   line-height: 48pt;
