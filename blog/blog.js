@@ -9,4 +9,12 @@ var items = [
         img: "/blog/01/titlecard.jpg",
         link: "/blog/01/post.html"
     },
+    {
+        title: "Deck Furnishing Guide",
+        date: new Date(2023, 11, 7, 12, 0),
+        author: "Chris Price",
+        text: "Make your outdoor area a place to live.",
+        img: "/blog/02/titlecard.jpg",
+        link: "/blog/02/post.html"
+    },
 ]

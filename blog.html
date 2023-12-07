@@ -64,6 +64,11 @@
                     var todayDate = new Date();
                     var container = document.querySelector("#replace-post");
                     let index = 0;
+
+                    items.sort(function(a, b){
+                        return b.date - a.date;
+                    });
+
                     for (let item of items) {
                         index++;
 
