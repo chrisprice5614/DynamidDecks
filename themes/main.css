@@ -1901,3 +1901,24 @@ p a{
     @keyframes fadeOutShink  {
       to { opacity: 0; padding: 0px; height: 0px; }
     }
+
+.blog-link{
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+  text-decoration-color: rgba();
+}
+
+.inblog-img{
+  object-fit: cover;
+  width: 80%;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+
+.img-caption{
+  padding-left: 10%;
+  font-size: 8pt;
+}
