@@ -1,7 +1,7 @@
 <html>
     <head>
 
-        <title>Dynamic Decks | Spokane Washington Composite Decks</title>
+        <title>Dynamic Decks | Contact</title>
         <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
         <meta charset='utf-8'>
         <meta name="DC.title" content="Dynamic Decks" />
@@ -11,7 +11,7 @@
         <meta name="ICBM" content="47.71653, -117.383242" />
         <meta name = "keywords" content ="decks, washington decks, deck builder, deck builder spokane, spokane decks">
         <meta name = "viewport" content = "width=device-width">
-        <meta name = "description" content = "Call 509-464-3325 to get an estimate on a deck construction project in Spokane, WA.">
+        <meta name = "description" content = "Here's where you can contact us. Leave your name, number, and email and we'll get back to you!">
         <meta name = "author" content = "Dynamic Decks">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,10 @@
         gtag('js', new Date());
 
         gtag('config', 'AW-443256344');
+
+        
         </script>
+        
     </head>
     <body>
         <header>
@@ -46,23 +49,23 @@
                 <form action="https://formspree.io/f/mzblyrwl" method="POST" class = "contact-form">
                     <label>
                         Name:
-                        <input type="text" name="name" style="width: 100%" required>
+                        <input type="text" name="name" style="width: 100%" placeholder="e.g. John Doe" required>
                     </label>
                     <label>
                         Phone number:
-                        <input type="phone number" name="phone" style="width: 100%" required>
+                        <input id="phoneNumber" type="tel" name="phone" style="width: 100%" maxlength="16" placeholder="e.g. (509) 555 - 1234" required>
                     </label>
                     <label>
                         Address:
-                        <input type="text" name="address" required>
+                        <input  id="searchTextField"type="text" name="address" required>
                     </label>
                     <label>
                         Email:
-                        <input type="email" name="email" required>
+                        <input type="email" name="email" required placeholder="e.g. jdoe555@gmail.com">
                     </label>
                     <label>
                         Message:
-                        <textarea name="message"></textarea>
+                        <textarea name="message" placeholder="Tell us about the project"></textarea>
                     </label>
                     <input type="checkbox" id="_optin" name="_optin" value="True" checked>
                     <label>
@@ -78,6 +81,65 @@
         </footer>
     </body>
 </html>
+<script>
+    function initialize() {
+    var input = document.getElementById('searchTextField');
+    new google.maps.places.Autocomplete(input);
+    }
+
+
+</script>
+
+<script>
+    const isNumericInput = (event) => {
+    const key = event.keyCode;
+    return ((key >= 48 && key <= 57) || // Allow number line
+        (key >= 96 && key <= 105) // Allow number pad
+    );
+};
+
+const isModifierKey = (event) => {
+    const key = event.keyCode;
+    return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+        (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
+        (key > 36 && key < 41) || // Allow left, up, right, down
+        (
+            // Allow Ctrl/Command + A,C,V,X,Z
+            (event.ctrlKey === true || event.metaKey === true) &&
+            (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
+        )
+};
+
+const enforceFormat = (event) => {
+    // Input must be of a valid number format or a modifier key, and not longer than ten digits
+    if(!isNumericInput(event) && !isModifierKey(event)){
+        event.preventDefault();
+    }
+};
+
+const formatToPhone = (event) => {
+    if(isModifierKey(event)) {return;}
+
+    const input = event.target.value.replace(/\D/g,'').substring(0,10); // First ten digits of input only
+    const areaCode = input.substring(0,3);
+    const middle = input.substring(3,6);
+    const last = input.substring(6,10);
+
+    if(input.length > 6){event.target.value = `(${areaCode}) ${middle} - ${last}`;}
+    else if(input.length > 3){event.target.value = `(${areaCode}) ${middle}`;}
+    else if(input.length > 0){event.target.value = `(${areaCode}`;}
+};
+
+const inputElement = document.getElementById('phoneNumber');
+inputElement.addEventListener('keydown',enforceFormat);
+inputElement.addEventListener('keyup',formatToPhone);
+</script>
+
+<script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA7bErUBhDz_YtKZzu_YDrLJCJiOlszeI&callback=initialize&libraries=places&v=weekly"
+      defer
+    ></script>
+
 
 <script>
     function gtag_report_conversion(url) {
