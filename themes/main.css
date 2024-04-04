@@ -75,12 +75,14 @@ input[type=text]:focus, input[type='phone number']:focus, input[type='email']:fo
 }
 
 .sticky-box{
-  position:fixed;
-  right: 1%;
+  position:sticky;
+  position: -webkit-sticky;
+  top: 0px;
   font-size: 12pt;
   background-image: url("/media/cypress-bck.png");
-  padding: 1%;
-  border-radius: 12px;
+  padding: 2px 20px 2px 2px;
+  z-index: 50;
+  height: 32px;
 }
 
 .quoteButton{
@@ -536,6 +538,11 @@ main h2{
   margin: 0%;
 }
 
+.conthuh{
+  width: 50%;
+  margin-left:auto;
+  margin-right: auto;
+}
 
 .lil{
   padding: 5%;
@@ -579,6 +586,12 @@ main h2{
   }
   .photo-width{
     margin-left:1%; margin-right:1%;
+  }
+
+  .conthuh{
+    width: 95%;
+    margin-left:auto;
+    margin-right: auto;
   }
 }
 
@@ -842,7 +855,18 @@ video {
 }
 
 .phone-number{
-  display:flex;justify-content:center;align-items:center;
+  display:flex;
+  float: right;
+  text-align: right;
+  text-justify: right;
+  font-size: 20pt;
+  right: 1px;
+  height: 100%;
+  
+}
+
+.inner-phone{
+  display:flex;
 }
 
 
@@ -956,7 +980,7 @@ hr.mainLine{
   .item {
     text-align: center;
     width: 50%;
-    line-height: 1.8em;
+    line-height: 2.2em;
     
 
   }
@@ -978,6 +1002,8 @@ hr.mainLine{
     padding: 18px;
     transition: all 220ms ease-out;
     background: none;
+    font-family: "Open Sans";
+    font-weight: 700;
     
 }
 
