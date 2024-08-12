@@ -22,6 +22,15 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQFVKSZN');</script>
+    <!-- End Google Tag Manager -->
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-443256344"></script>
         <script>
@@ -36,6 +45,12 @@
         
     </head>
     <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQFVKSZN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
         <div class="sticky-box">
             <div class="phone-number">
                 <span class="inner-phone">
@@ -92,14 +107,7 @@
         </footer>
     </body>
 </html>
-<script>
-    function initialize() {
-    var input = document.getElementById('searchTextField');
-    new google.maps.places.Autocomplete(input);
-    }
 
-
-</script>
 
 <script>
     const isNumericInput = (event) => {
@@ -146,6 +154,10 @@ inputElement.addEventListener('keydown',enforceFormat);
 inputElement.addEventListener('keyup',formatToPhone);
 </script>
 
+<script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA7bErUBhDz_YtKZzu_YDrLJCJiOlszeI&callback=initialize&libraries=places&v=weekly"
+      defer
+    ></script>
 
 
 <script>
