@@ -17,4 +17,12 @@ var items = [
         img: "/blog/02/titlecard.jpg",
         link: "/blog/02/post.html"
     },
+    {
+        title: "Why PVC Decking is a Better Choice in 2024",
+        date: new Date(2024, 1, 21, 2, 0),
+        author: "Chris Price",
+        text: "New lumber is not what it used to be",
+        img: "/blog/03/titlecard.jpg",
+        link: "/blog/03/post.html"
+    },
 ]
