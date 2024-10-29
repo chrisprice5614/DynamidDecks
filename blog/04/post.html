@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Decks | Creating Privacy on your Decks: Fences, Plants, and Screens</title>
+        <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+        <meta charset='utf-8'>
+        <meta name="DC.title" content="Dynamic Decks" />
+        <meta name="geo.region" content="US-WA" />
+        <meta name="geo.placename" content="Spokane" />
+        <meta name="geo.position" content="47.71653;-117.383242" />
+        <meta name="ICBM" content="47.71653, -117.383242" />
+        <meta name = "keywords" content ="decks, washington decks, deck builder, deck builder spokane, spokane decks">
+        <meta name = "viewport" content = "width=device-width">
+        <meta name = "description" content = "Call 509-464-3325 to get an estimate on a deck construction project in Spokane, WA.">
+        <meta name = "author" content = "Dynamic Decks">
+
+        <!-- Facebook stuff -->
+        <meta property="og:url"           content="https://www.dynamicdecksinc.com/blog/04/post.html" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Creating Privacy on your Decks: Fences, Plants, and Screens | Dynamic Decks" />
+        <meta property="og:description"   content="Add privacy to your backyard." />
+        <meta property="og:image"         content="https://www.dynamicdecksinc.com/blog/02/titlecard.jpg" />
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0&appId=909766237151352" nonce="IXrlmku5"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/uci5aaf.css">
+        <link rel="stylesheet" href="/themes/main.css" type="text/css">
+        
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!--Ads-->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1537448985159168"
+     crossorigin="anonymous"></script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-443256344"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-443256344');
+        </script>
+        
+    </head>
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQFVKSZN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <header>
+        </header>
+        <script id="nav_replace" src="/nav.js"></script>
+        
+
+        <script>
+            
+            function shareFacebook() {
+                window.open('https://www.facebook.com/sharer/sharer.php?u='+window.location.href+'&amp;src=sdkpreparse','_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Facebook","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+            }
+
+            function shareTwitter() {
+                window.open('https://twitter.com/intent/tweet?text=Check%20out%20this%20article%20by%20Dynamic%20Decks!%20'+window.location.href,'_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Twitter","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+
+                
+            }
+
+            function sharePinterest() {
+                window.open('http://pinterest.com/pin/create/link/?url='+window.location.href+'&media=https://www.dynamicdecksinc.com/blog/02/titlecard.jpg&description=Check%20out%20this%20article%20by%20Dynamic%20Decks!','_blank');
+
+                let w = screen.width;
+                let d = new Date();
+
+
+                let req = new XMLHttpRequest();
+
+                req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    var jsonHere = JSON.parse(req.responseText);
+                    var arLength = Object.keys(jsonHere.record.Shares).length;
+                    jsonHere.record.Shares[arLength] = {"Time":d.toString(),"Width":w,"Type":"Pinterest","Article":window.location.href};
+                    updateJson(jsonHere.record);
+                }
+                };
+
+                req.open("GET", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                req.setRequestHeader("X-Read-Key", "$2b$10$9tGp5ZXHVRcUwR8K4iYY6.nocsSkAiQDYz.Q0Q4hv.LzxP1mYS/2m");
+                req.send();
+
+                function updateJson(pass){
+                    let req = new XMLHttpRequest();
+
+                    req.onreadystatechange = () => {
+                    if (req.readyState == XMLHttpRequest.DONE) {
+                        
+                    }
+                    };
+
+                    req.open("PUT", "https://api.jsonbin.io/v3/b/656faa680574da7622d0c5bb", true);
+                    req.setRequestHeader("Content-Type", "application/json");
+                    req.setRequestHeader("X-Access-Key", "$2a$10$2Dr/V6X6XGW3wG1ufYH1MeTzm2LtfxSSZcFgW4ntuzCiSYle2qryi");
+                    req.send(JSON.stringify(pass));
+                }
+            }
+
+        </script>
+
+        <main>
+        <div class="midSection">
+            <div style="width:80%; margin-left:auto; margin-right:auto;">
+                        <h1 style="text-align: left;">Creating Privacy on your Decks: Fences, Plants, and Screens</h1>
+                        <div style="font-size:16pt">Add privacy to your backyard.</div>
+                        <br>
+                        <div>By <b>Chris Price</b> • October 29th 2024</div>
+                        <img src="/blog/02/hero.jpg" width="100%;" style="width:100%; object-position: middle middle;object-fit: cover;">
+                        <span class="fb-share-button" data-href="https://www.dynamicdecksinc.com/blog/02/post.html" data-layout="" data-size="">
+                            <a href="javascript:shareFacebook()  " rel="noopener">
+                                <ion-icon name="logo-facebook" class="social-icon-link"></ion-icon>
+                            </a>
+                        </span>
+                        <a href="javascript:shareTwitter()">
+                            <ion-icon name="logo-twitter" class="social-icon-link"></ion-icon>
+                        </a>
+                        <a href="javascript:sharePinterest()">
+                            <ion-icon name="logo-pinterest" class="social-icon-link"></ion-icon>
+                        </a>
+                        
+            </div>
+            <div class="thin-space">
+                <br><br>
+                <h1 style="text-align:left;">The Importance of Privacy</h1>
+                <div class="article-paragraph"> </div>
+                <div class="article-paragraph">Another variable that the rings can show is how easily the tree grew to become the size that it is. When rings are tightly packed together, the tree had to struggle for its survivial. Lack of sunlight, competition and poor weather conditions can cause a tree to take longer to reach a mature size. This longer aging of the tree causes the rings to be packed together in a dense manner. This density makes the wood more strong, durable, and weather resistant.</div>
+
+                <h1 style="text-align:left;">Old Growth and New Growth</h1>
+                <div class="article-paragraph">Decks are often seen as an extension of the indoor living space, so choosing furniture that is both stylish and functional is essential. Unlike the porch, a deck is where less motion happens. Having a table and chairs that can withstand the weather is a great way to enjoy the outdoors. We recomend durable all-weather wicker furniture with plush cushions for sitting. We recommend <a class="blog-link" href="https://amzn.to/46NHIHC" target="_blank">Devoko</a> for thier low price and high quality.</div>
+                <h1 style="text-align:left;">Go Ahead and Relax</h1>
+                <div class="article-paragraph">Patios require furniture that can handle the elements while offering maximum comfort. It's usually the main location for people to sit and hangout in your yard when one is further from the house. Maximum comfort needs to be here. Choosing furniture that is weather resistant but also very comfort is a must for all guests. If the patio is covered, the need for more durable materials is less. <a class="blog-link" href="https://amzn.to/3NjLbH8" target="_blank">Sophia & William</a> have amazing furniture that's not only comfortable, but also durable. We highly recomend this set and have tested it, finding maximum comfort.</div>
+                <img src="/blog/02/soph.jpg" class="inblog-img">
+                <div class="img-caption">Sophia & William Outdoor Patio 5-Piece Furniture Sets</div>
+                <h1 style="text-align:left;">A Classic: The Rocking Chair</h1>
+                <div class="article-paragraph">The rocking chair, with its timeless design and gentle motion, is a quintessential symbol of porch living. It brings images of relaxed afternoons and peaceful evenings, where the rhythmic creaking of the rocker blends seamlessly with the sounds of nature. This classic piece of furniture is not just about aesthetic appeal; it offers a unique form of relaxation that has been cherished through generations. Its presence on a porch adds a touch of traditional charm and creates a welcoming atmosphere, inviting people to sit down, unwind, and enjoy the slower pace of life. If you want to upgrade your porch with comfort and aesthetics, we recommend <a class="blog-link" href="https://amzn.to/3RdquxB" target="_blank">Greesum's rocking chair</a> to give your outdoor space and extra touch. </div>
+                <h1 style="text-align:left;">Enjoy the Outdoors</h1>
+                <div class="article-paragraph">Choosing the right furniture for your outdoor space can significantly enhance your experience. Whether it's for a deck, patio, or porch, ensure that the furniture you select is not only stylish but also durable and comfortable. </div>
+                <br>
+            </div>
+            <button class="instagram-button" onclick="window.open('https://www.instagram.com/dynamicdecks/','_blank')">Follow Our Instagram <b>@DynamicDecks</b></button>
+            <br>
+        </div>
+
+        </main>
+        <footer>
+            <script id="foot_replace" src="/footer.js"></script>
+        </footer>
+    </body>
+</html>
+
