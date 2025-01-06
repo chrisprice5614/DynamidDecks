@@ -66,14 +66,14 @@
         <header>
         </header>
         <script id="nav_replace" src="nav.js"></script>
-        <h1 class="title cssanimation sequence fadeInBottom" style="color: black;">Contact Us</h1>       
+        <h1 class="title cssanimation sequence fadeInBottom" style="color: black;">Contact Us</h1>
 
 
         <main>
             
             <div class="thin-space">
             <h1 class="cssanimation sequence fadeInBottom" style="color: black;">We're excited to hear from you!</h1>
-                <form action="https://formspree.io/f/mzblyrwl" method="POST" class = "contact-form">
+                <form action="https://formspree.io/f/mzblyrwl" method="POST" class = "contact-form" name="FormName">
                     <label>
                         Name:
                         <input type="text" name="name" style="width: 100%" placeholder="e.g. John Doe" required>
@@ -97,7 +97,9 @@
 
                     <button onclick="gtag_report_conversion(url);" type="submit" class="galleryButton" style="padding-top: 8px; padding-bottom: 8px; padding-left: 12px; padding-right: 12px;"><b>Send</b></button>
                 </form>
+                All your information is stored safely. Questions about your data? Check our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
             </div>
+            
             
         </main>
         <footer>
@@ -116,6 +118,10 @@
 };
 
 const isModifierKey = (event) => {
+    for(i=0; i<document.FormName.elements.length; i++) {
+    document.FormName.elements[i].disabled=true;
+    }
+    document.getElementById("surroundingarea").style.backgroundColor = "#CCCCCC";
     const key = event.keyCode;
     return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
         (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
