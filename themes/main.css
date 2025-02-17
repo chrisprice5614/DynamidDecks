@@ -42,6 +42,7 @@ input[type=text], input[type='tel'], input[type='email'], textarea {
   border-radius: 4px;
   box-sizing: border-box;
   transition: box-shadow 220ms ease;
+  background-color: #fff;
 }
 
 input[type=text]:hover, input[type='phone number']:hover, input[type='email']:hover, textarea:hover {
@@ -473,6 +474,7 @@ main h2{
   text-align: center;
   justify-content:center;
   display: flex;
+  line-height: normal;
 }
 
 .container {
@@ -490,17 +492,31 @@ main h2{
   object-fit: cover;
 }
 
+.container2 {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 384px;
+  overflow-y: hidden;
+}
+
+.container2 img{
+  width: 100%;
+  height: 384px;
+  object-position: middle middle;
+  object-fit: cover;
+}
 .container-smaller {
   position: relative;
   text-align: center;
   width: 100%;
-  height: 256px;
+  height: 384px;
   overflow-y: hidden;
 }
 
 .container-smaller img{
   width: 100%;
-  height: 256px;
+  height: 384px;
   object-position: middle middle;
   object-fit: cover;
 }
@@ -1106,7 +1122,15 @@ p a{
 .team-photo{
   background-image: url("/media/team-photo.jpg");
   background-size: cover;
+  
 }
+
+.pergola-photo{
+  background-image: url("/media/pergolas/hero.jpg");
+  background-size: cover;
+  
+}
+
 
 .blog-photo{
   background-image: url("/media/blog.jpg");
