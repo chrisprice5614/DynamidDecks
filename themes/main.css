@@ -718,6 +718,7 @@ main h3 {
 .title {
   z-index: -50;
     font-family: "Open Sans";
+
     font-weight: 600;
     font-size: 64pt;
     padding: 40px 0px 0px 0px;
@@ -2016,21 +2017,26 @@ p a{
 }
 
 #countdown, .show{
-  text-align: center;
+  
   font-size: 24pt;
   padding: 4px;
   line-height: normal;
   color: #f9ffac;
+  
 }
 
 
 .homeshowphoto{
-  width: 33%;
+  width: 75%;
+  padding-top: 12%;
+  text-align: left;
+  
 }
 
 @media screen and (max-width: 800px) {
   .homeshowphoto{
     width: 60%;
+    text-align: center;
   }
 }
 
@@ -2054,3 +2060,9 @@ p a{
   }
 }
 
+.bottomright {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  z-index: 1;
+}
