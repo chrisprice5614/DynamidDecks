@@ -17,4 +17,12 @@ var items = [
         img: "/blog/02/titlecard.jpg",
         link: "/blog/02/post.html"
     },
+    {
+        title: "How easy is it to maintain a PVC Deck?",
+        date: new Date("March 3, 2025 10:24:00"),
+        author: "Chris Price",
+        text: "The helpful tips below will educate you on how to care for and clean your PVC deck so that it looks its best from day one!",
+        img: "/media/gallery/118.jpg",
+        link: "/blog/04/post.html"
+    },
 ]
