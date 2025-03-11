@@ -112,6 +112,7 @@ input[type=text]:focus, input[type='phone number']:focus, input[type='email']:fo
   text-decoration-color: rgba(0,0,0,0);
   
   transition: text-decoration-color 220ms ease-out;
+
 }
 
 .post-holder{
@@ -918,11 +919,9 @@ video {
   display: block;
     clear: both;
     float: none;
-    overflow: hidden;
     margin: 0;
     padding: 0;
     border: 0;
-    overflow: hidden;
     text-align: center;
     opacity: 1;
     background-image: url("/media/wood-bckg.png");
@@ -2055,7 +2054,7 @@ p a{
 
 
 .homeshowphoto{
-  width: 75%;
+  width: 50%;
   text-align: left;
   
 }
@@ -2125,4 +2124,86 @@ p a{
   padding-top: 8px;
   color: white;
   text-decoration: none;
+}
+
+
+.dropbtn {
+  margin: 0;
+    font-size: large;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    padding: 18px;
+    transition: all 220ms ease-out;
+    background: none;
+    font-family: "Open Sans";
+    font-weight: 700;
+    text-shadow:none;
+    letter-spacing:normal;
+    
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 500;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  z-index: 500;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  height: 100%;
+  
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  margin: 0;
+    font-size: large;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 220ms ease-out;
+    background: none;
+    font-family: "Open Sans";
+    font-weight: 700;
+    text-shadow:none;
+    letter-spacing:normal;
+
+  z-index: 500;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-image: url("/media/cypress-bck.png");
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  cursor: pointer;
+ color:  var(--linkHover);
+    text-decoration-color: var(--linkHover);
+    padding: 18px;
+    text-decoration: underline;
+    
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+ cursor: pointer;
+ color:  var(--linkHover);
+    text-decoration-color: var(--linkHover);
+    padding: 18px;
+    text-decoration: underline;
 }
