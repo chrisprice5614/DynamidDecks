@@ -2,6 +2,11 @@
 //Always add to the top
 var items = [
     {
+        title: "Why Decks are a Great Investment",
+        img: "/blog/04/01.jpg",
+        link: "/blog/04/blog.html"
+    },
+    {
         title: "Benefits of Azek PVC Decking for Homeowners",
         img: "/blog/03/01.jpg",
         link: "/blog/03/blog.html"
