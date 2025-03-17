@@ -2207,3 +2207,99 @@ p a{
     padding: 18px;
     text-decoration: underline;
 }
+
+
+.post-title{
+  margin-top: 12px;
+  color: black;
+  font-size:18pt;
+  text-align:center;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0);
+  
+  transition: text-decoration-color 220ms ease-out;
+}
+
+.post-holder{
+  
+  text-decoration: none;
+  margin: 12px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow:  0px 0px 8px rgba(0,0,0,0.4);
+  transition: box-shadow 220ms ease-out;
+  padding-bottom: 4px;
+  margin-left: 10%;
+}
+
+.post-holder:hover{
+  box-shadow:  4px 4px 8px rgba(0,0,0,0.8);
+}
+
+.post-title:hover{
+  text-decoration-color: rgba(0,0,0,1);
+
+}
+
+.post-image-container{
+  
+  height:256px;
+  width:90%;
+  background-color: rgb(204, 195, 195);
+  margin: 12px;
+  margin-left: 5%;
+  border-radius: 12px;
+  box-shadow:  0px 0px 8px rgba(0,0,0,0.8);
+  
+}
+
+.post-image{
+  height:256px;
+  max-width: 90%;
+  display: block; 
+  margin: auto;
+  filter:none;
+  object-fit: cover;
+}
+
+
+
+.block {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  color: #333;
+}
+
+
+.blog img{
+  object-fit: cover;
+  width: 80%;
+  height: 384px;
+  margin-left: 10%;
+}
+
+.blog p{
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-indent: 12px;
+}
+
+.blog h1{
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-indent: 0;
+  font-size: x-large;
+}
+
+.blog li{
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-indent: 0;
+}

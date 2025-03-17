@@ -66,56 +66,40 @@
         </header>
         <script id="nav_replace" src="nav.js"></script>
         
-        <div class="video-wrapper blog-photo">
 
-            
-            <div class="headerVid">
-                <h1 class="title">Blog</h1>
-            </div>
-        </div>
 
-        <main>
+
         <div class="block">
             <div class="midSection">
 
-                    <h1 class="reveal">Hear From The Best Deck Builders</h1>
-                    <br><br>
 
                     <div id="replace-post"></div>
+
+                    <button class="instagram-button" onclick="window.open('https://www.instagram.com/dynamicdecks/','_blank')">Follow Our Instagram <b>@DynamicDecks</b></button>
             </div>
 
             
 
-        <script src="/blog.js"></script>
-        <script>
-            var container = document.querySelector("#replace-post");
-            var index = 0;
+            <script src="/blog.js"></script>
+            <script>
+                var container = document.querySelector("#replace-post");
+        
+                    //${items[ window.location.hash.substring(1)].link}
+        
+                    fetch(items[ window.location.hash.substring(1)].link)
+                    .then(response => response.text())
+                    .then((response) => {
+                        console.log(response)
+                        container.insertAdjacentHTML('beforeend', `<h1 style="font-size: xx-large;">${items[ window.location.hash.substring(1)].title}</h1>`+response);
+                    })
+        
+                
+            </script>
 
-            for (let item of items) {
 
-            var html = `
-                <div class="post-holder">
-                    <a href="/blogpost.html#${index}" >
-                        <h4 class="post-title">
-                            ${item.title}
-                        </h4>
-                        <div class="post-image-container" style="background-image: url(${item.img});background-size: cover; ">
-                            <div style = "backdrop-filter: blur(4px); border-radius:12px;">
-                                <img src=${item.img} class="post-image">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <br>
-            `
-
-            container.insertAdjacentHTML('beforeend', html);
-            index++;
-        }
-        </script>
         </div>
 
-        </main>
+
         <footer>
             <script id="foot_replace" src="footer.js"></script>
         </footer>
